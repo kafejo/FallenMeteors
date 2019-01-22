@@ -7,8 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E304901821F7A1AF0092B0AD /* AppContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304901521F7A1AF0092B0AD /* AppContract.swift */; };
+		E304901921F7A1AF0092B0AD /* AppMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304901621F7A1AF0092B0AD /* AppMainViewController.swift */; };
+		E304901A21F7A1AF0092B0AD /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304901721F7A1AF0092B0AD /* AppRouter.swift */; };
+		E304902821F7A1C20092B0AD /* LoadFromStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304901C21F7A1C20092B0AD /* LoadFromStoryboard.swift */; };
+		E304902A21F7A1C20092B0AD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304902021F7A1C20092B0AD /* HomeView.swift */; };
+		E304902B21F7A1C20092B0AD /* HomeView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E304902121F7A1C20092B0AD /* HomeView.storyboard */; };
+		E304902C21F7A1C20092B0AD /* HomeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304902221F7A1C20092B0AD /* HomeEntity.swift */; };
+		E304902D21F7A1C20092B0AD /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304902321F7A1C20092B0AD /* HomeInteractor.swift */; };
+		E304902E21F7A1C20092B0AD /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304902421F7A1C20092B0AD /* HomeRouter.swift */; };
+		E304902F21F7A1C20092B0AD /* HomeAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304902521F7A1C20092B0AD /* HomeAssembler.swift */; };
+		E304903021F7A1C20092B0AD /* HomeContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304902621F7A1C20092B0AD /* HomeContract.swift */; };
+		E304903121F7A1C20092B0AD /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304902721F7A1C20092B0AD /* HomePresenter.swift */; };
+		E304903D21F7A26B0092B0AD /* MapContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304903321F7A26B0092B0AD /* MapContract.swift */; };
+		E304903E21F7A26B0092B0AD /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304903421F7A26B0092B0AD /* MapRouter.swift */; };
+		E304903F21F7A26B0092B0AD /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304903521F7A26B0092B0AD /* MapPresenter.swift */; };
+		E304904021F7A26B0092B0AD /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304903621F7A26B0092B0AD /* MapInteractor.swift */; };
+		E304904121F7A26B0092B0AD /* MapAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304903721F7A26B0092B0AD /* MapAssembler.swift */; };
+		E304904221F7A26B0092B0AD /* MapEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304903821F7A26B0092B0AD /* MapEntity.swift */; };
+		E304904321F7A26B0092B0AD /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304903A21F7A26B0092B0AD /* MapView.swift */; };
+		E304904421F7A26B0092B0AD /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E304903B21F7A26B0092B0AD /* MapView.storyboard */; };
 		E326807221F66E2E00FAD3C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326807121F66E2E00FAD3C3 /* AppDelegate.swift */; };
-		E326807421F66E2E00FAD3C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326807321F66E2E00FAD3C3 /* ViewController.swift */; };
 		E326807721F66E2E00FAD3C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E326807521F66E2E00FAD3C3 /* Main.storyboard */; };
 		E326807921F66E2F00FAD3C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E326807821F66E2F00FAD3C3 /* Assets.xcassets */; };
 		E326807C21F66E2F00FAD3C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E326807A21F66E2F00FAD3C3 /* LaunchScreen.storyboard */; };
@@ -34,13 +53,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E304901521F7A1AF0092B0AD /* AppContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppContract.swift; sourceTree = "<group>"; };
+		E304901621F7A1AF0092B0AD /* AppMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMainViewController.swift; sourceTree = "<group>"; };
+		E304901721F7A1AF0092B0AD /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		E304901C21F7A1C20092B0AD /* LoadFromStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadFromStoryboard.swift; sourceTree = "<group>"; };
+		E304902021F7A1C20092B0AD /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E304902121F7A1C20092B0AD /* HomeView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomeView.storyboard; sourceTree = "<group>"; };
+		E304902221F7A1C20092B0AD /* HomeEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeEntity.swift; sourceTree = "<group>"; };
+		E304902321F7A1C20092B0AD /* HomeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		E304902421F7A1C20092B0AD /* HomeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		E304902521F7A1C20092B0AD /* HomeAssembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeAssembler.swift; sourceTree = "<group>"; };
+		E304902621F7A1C20092B0AD /* HomeContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeContract.swift; sourceTree = "<group>"; };
+		E304902721F7A1C20092B0AD /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		E304903321F7A26B0092B0AD /* MapContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapContract.swift; sourceTree = "<group>"; };
+		E304903421F7A26B0092B0AD /* MapRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
+		E304903521F7A26B0092B0AD /* MapPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		E304903621F7A26B0092B0AD /* MapInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
+		E304903721F7A26B0092B0AD /* MapAssembler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAssembler.swift; sourceTree = "<group>"; };
+		E304903821F7A26B0092B0AD /* MapEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapEntity.swift; sourceTree = "<group>"; };
+		E304903A21F7A26B0092B0AD /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		E304903C21F7A26B0092B0AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MapView.storyboard; sourceTree = "<group>"; };
+		E304904621F7C1160092B0AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E326806E21F66E2E00FAD3C3 /* FallenMeteors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallenMeteors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E326807121F66E2E00FAD3C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E326807321F66E2E00FAD3C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E326807621F66E2E00FAD3C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E326807821F66E2F00FAD3C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E326807B21F66E2F00FAD3C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		E326807D21F66E2F00FAD3C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E326808221F66E2F00FAD3C3 /* FallenMeteorsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FallenMeteorsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E326808621F66E2F00FAD3C3 /* FallenMeteorsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallenMeteorsTests.swift; sourceTree = "<group>"; };
 		E326808821F66E2F00FAD3C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,6 +112,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E304901B21F7A1C20092B0AD /* FrameworkExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				E304901C21F7A1C20092B0AD /* LoadFromStoryboard.swift */,
+			);
+			path = FrameworkExtensions;
+			sourceTree = "<group>";
+		};
+		E304901E21F7A1C20092B0AD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E304902621F7A1C20092B0AD /* HomeContract.swift */,
+				E304902421F7A1C20092B0AD /* HomeRouter.swift */,
+				E304902521F7A1C20092B0AD /* HomeAssembler.swift */,
+				E304902321F7A1C20092B0AD /* HomeInteractor.swift */,
+				E304902221F7A1C20092B0AD /* HomeEntity.swift */,
+				E304902721F7A1C20092B0AD /* HomePresenter.swift */,
+				E304901F21F7A1C20092B0AD /* Home */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E304901F21F7A1C20092B0AD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E304902021F7A1C20092B0AD /* HomeView.swift */,
+				E304902121F7A1C20092B0AD /* HomeView.storyboard */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		E304903221F7A26B0092B0AD /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				E304903321F7A26B0092B0AD /* MapContract.swift */,
+				E304903421F7A26B0092B0AD /* MapRouter.swift */,
+				E304903721F7A26B0092B0AD /* MapAssembler.swift */,
+				E304903621F7A26B0092B0AD /* MapInteractor.swift */,
+				E304903821F7A26B0092B0AD /* MapEntity.swift */,
+				E304903521F7A26B0092B0AD /* MapPresenter.swift */,
+				E304903921F7A26B0092B0AD /* MapView */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		E304903921F7A26B0092B0AD /* MapView */ = {
+			isa = PBXGroup;
+			children = (
+				E304903A21F7A26B0092B0AD /* MapView.swift */,
+				E304903B21F7A26B0092B0AD /* MapView.storyboard */,
+			);
+			path = MapView;
+			sourceTree = "<group>";
+		};
+		E304904521F7A7340092B0AD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E326807821F66E2F00FAD3C3 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		E326806521F66E2E00FAD3C3 = {
 			isa = PBXGroup;
 			children = (
@@ -97,12 +197,17 @@
 		E326807021F66E2E00FAD3C3 /* FallenMeteors */ = {
 			isa = PBXGroup;
 			children = (
+				E304901521F7A1AF0092B0AD /* AppContract.swift */,
+				E304901621F7A1AF0092B0AD /* AppMainViewController.swift */,
+				E304901721F7A1AF0092B0AD /* AppRouter.swift */,
 				E326807121F66E2E00FAD3C3 /* AppDelegate.swift */,
-				E326807321F66E2E00FAD3C3 /* ViewController.swift */,
 				E326807521F66E2E00FAD3C3 /* Main.storyboard */,
-				E326807821F66E2F00FAD3C3 /* Assets.xcassets */,
+				E304904621F7C1160092B0AD /* Info.plist */,
+				E304901E21F7A1C20092B0AD /* Home */,
+				E304903221F7A26B0092B0AD /* Map */,
+				E304904521F7A7340092B0AD /* Resources */,
 				E326807A21F66E2F00FAD3C3 /* LaunchScreen.storyboard */,
-				E326807D21F66E2F00FAD3C3 /* Info.plist */,
+				E304901B21F7A1C20092B0AD /* FrameworkExtensions */,
 			);
 			path = FallenMeteors;
 			sourceTree = "<group>";
@@ -231,6 +336,8 @@
 			files = (
 				E326807C21F66E2F00FAD3C3 /* LaunchScreen.storyboard in Resources */,
 				E326807921F66E2F00FAD3C3 /* Assets.xcassets in Resources */,
+				E304902B21F7A1C20092B0AD /* HomeView.storyboard in Resources */,
+				E304904421F7A26B0092B0AD /* MapView.storyboard in Resources */,
 				E326807721F66E2E00FAD3C3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,8 +363,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E326807421F66E2E00FAD3C3 /* ViewController.swift in Sources */,
+				E304903021F7A1C20092B0AD /* HomeContract.swift in Sources */,
+				E304901821F7A1AF0092B0AD /* AppContract.swift in Sources */,
+				E304903E21F7A26B0092B0AD /* MapRouter.swift in Sources */,
+				E304903F21F7A26B0092B0AD /* MapPresenter.swift in Sources */,
+				E304902C21F7A1C20092B0AD /* HomeEntity.swift in Sources */,
+				E304902A21F7A1C20092B0AD /* HomeView.swift in Sources */,
+				E304904021F7A26B0092B0AD /* MapInteractor.swift in Sources */,
+				E304902821F7A1C20092B0AD /* LoadFromStoryboard.swift in Sources */,
+				E304902F21F7A1C20092B0AD /* HomeAssembler.swift in Sources */,
 				E326807221F66E2E00FAD3C3 /* AppDelegate.swift in Sources */,
+				E304901A21F7A1AF0092B0AD /* AppRouter.swift in Sources */,
+				E304903D21F7A26B0092B0AD /* MapContract.swift in Sources */,
+				E304904221F7A26B0092B0AD /* MapEntity.swift in Sources */,
+				E304902D21F7A1C20092B0AD /* HomeInteractor.swift in Sources */,
+				E304903121F7A1C20092B0AD /* HomePresenter.swift in Sources */,
+				E304901921F7A1AF0092B0AD /* AppMainViewController.swift in Sources */,
+				E304904321F7A26B0092B0AD /* MapView.swift in Sources */,
+				E304902E21F7A1C20092B0AD /* HomeRouter.swift in Sources */,
+				E304904121F7A26B0092B0AD /* MapAssembler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +417,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		E304903B21F7A26B0092B0AD /* MapView.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E304903C21F7A26B0092B0AD /* Base */,
+			);
+			name = MapView.storyboard;
+			sourceTree = "<group>";
+		};
 		E326807521F66E2E00FAD3C3 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -435,6 +567,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P427HPREFA;
 				INFOPLIST_FILE = FallenMeteors/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -453,6 +586,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P427HPREFA;
 				INFOPLIST_FILE = FallenMeteors/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
