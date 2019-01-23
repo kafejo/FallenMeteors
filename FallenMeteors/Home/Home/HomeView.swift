@@ -8,17 +8,23 @@ class HomeView: UITableViewController, HomeViewProtocol {
     
     func showMeteorData(_ meteorData: [Dictionary<String, Any>]) {
         tableViewData = meteorData
-        
-        //self.tableView.reloadData()
     }
     
 }
 extension HomeView {
-//    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//    }
-//
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier:"MeteorTableViewCell", for: indexPath) as! MeteorTableViewCell
+
+        if let cellName = tableViewData?[indexPath.row]["mass"] as? String {
+            cell.name.text = cellName
+        }
+        
+        return cell
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+    }
 }

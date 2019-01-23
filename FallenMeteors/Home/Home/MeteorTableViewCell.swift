@@ -10,5 +10,7 @@ import Foundation
 import UIKit
 
 class MeteorTableViewCell: UITableViewCell {
-    
+    @IBOutlet var name: UILabel!
+    @IBOutlet var mass: UILabel!
+    @IBOutlet var fellAtDate: UILabel!
 }
