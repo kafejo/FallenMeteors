@@ -10,14 +10,19 @@ class HomeRouter: HomeRouterProtocol {
         self.interactor = assembler.interactor
         
         let view = assembler.view
-        
-        //TODO rename to withbackend or something
-        synchronize()
+
+        initialLaunchBackendSync()
         
         return view as! UIViewController
     }
     
-    func synchronize() {
+    private func initialLaunchBackendSync() {
+        
+        //TODO is this the best place to put something like this or no 
+        let firstLaunch = UserDefaults.standard.bool(forKey: "firstLaunch")
+        guard !firstLaunch else {return}
+        UserDefaults.standard.set(true, forKey: "firstLaunch")
+        
         interactor.loadData()
     }
 }

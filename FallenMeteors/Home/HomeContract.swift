@@ -5,7 +5,6 @@ protocol HomeRouterProtocol: HomeInteractorDelegate {
     var interactor: HomeInteractorProtocol! {get set}
     
     func assembleModule() -> UIViewController
-    func synchronize()
 }
 
 protocol HomeInteractorDelegate: class {
@@ -41,7 +40,10 @@ protocol HomeViewProtocol: class {
     func showMeteorData(_ meteorData: [Dictionary<String, Any>])
 }
 
-protocol HomeEntityProtocol: class {
+protocol HomeEntityProtocol: Codable {
     var url: URL! {get set}
-    var meteors: [Dictionary<String, Any>]? {get set}
+    var meteorsOrderedBySize: [[Int: MeteorData]]! {get set}
+    
+    func archive()
+    static func retrieveArchive() -> HomeEntityProtocol
 }

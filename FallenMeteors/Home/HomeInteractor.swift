@@ -50,9 +50,9 @@ class HomeInteractor: HomeInteractorProtocol {
             return
         }
         
-        guard var meteorData = jsonResult as? [Dictionary<String, Any>] else { print("Unable to parse Json"); return }
+        guard var meteorData = jsonResult as? [[String: Any]] else { print("Unable to parse Json"); return }
         sortMeteorsBySize(&meteorData)
-        entity.meteors = meteorData
+        storeMeteorData(meteorData)
         
         presenter.updateMeteorData(meteorData)
     }
@@ -70,6 +70,33 @@ class HomeInteractor: HomeInteractorProtocol {
         }
         
     }
+    
+    private func storeMeteorData(_ meteorsAsJson: [[String: Any]]) {
+        
+        var meteorsOrderedBySize = [[Int: MeteorData]]()
+        
+        for meteorData in meteorsAsJson {
+            
+            guard let idAsString = meteorData["id"] as? String, let idAsInt = Int(idAsString) else {continue}
+            
+            var meteor = MeteorData()
+            
+            meteor.name = meteorData["name"] as? String
+            meteor.mass = meteorData["mass"] as? String
+            meteor.year = meteorData["year"] as? String
+            
+            if let coordinates = meteorData["coordinates"] as? [Double] {
+                meteor.geoLocation = GeoLocation(latitude: coordinates[0], longitude: coordinates[1])
+            }
+
+            meteorsOrderedBySize.append([idAsInt : meteor])
+            
+        }
+        
+        entity.meteorsOrderedBySize = meteorsOrderedBySize
+        entity.archive()
+    }
+    
 }
 extension HomeInteractor {
 

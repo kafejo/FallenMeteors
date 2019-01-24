@@ -8,10 +8,9 @@ struct HomeAssembler {
     let presenter: HomePresenterProtocol
     let interactor: HomeInteractorProtocol
     
-    init(entity: HomeEntityProtocol = HomeEntity() ,presenter: HomePresenterProtocol = HomePresenter(), interactor: HomeInteractorProtocol = HomeInteractor()) {
+    init(entity: HomeEntityProtocol = HomeEntity.retrieveArchive() ,presenter: HomePresenterProtocol = HomePresenter(), interactor: HomeInteractorProtocol = HomeInteractor()) {
         
         let view: HomeView = UIViewController.loadFromStoryboard()
-        
         self.view = view
         self.entity = entity
         self.presenter = presenter
@@ -26,8 +25,6 @@ struct HomeAssembler {
         interactor.entity = entity
         interactor.presenter = presenter
         presenter.view = view
-        
-        entity.url = URL(string: "https://data.nasa.gov/resource/y77d-th95.json")
     
     }
     
