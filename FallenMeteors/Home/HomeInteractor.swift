@@ -14,6 +14,7 @@ class HomeInteractor: HomeInteractorProtocol {
         
         let request = NSMutableURLRequest(url: entity.url!)
         request.addValue("application/json", forHTTPHeaderField:"Accept")
+        //TODO put this in enity
         request.addValue("yx6khWrHi7unQhXqp88y2GiaV", forHTTPHeaderField: "X-App-Token")
  
         URLSession.shared.dataTask(with: request as URLRequest) { [weak self] (data, response, error ) in
@@ -36,6 +37,10 @@ class HomeInteractor: HomeInteractorProtocol {
         
     }
     
+    func showMeteors() {
+        presenter.showMeteorData(entity.meteorsOrderedBySize)
+    }
+    
     private func backendSyncHeartbeat() {
         //TODO check backend every x minues or on app wakeup
     }
@@ -54,7 +59,6 @@ class HomeInteractor: HomeInteractorProtocol {
         sortMeteorsBySize(&meteorData)
         storeMeteorData(meteorData)
         
-        presenter.updateMeteorData(meteorData)
     }
     
     private func sortMeteorsBySize(_ meteorData: inout [[String: Any]]) {
@@ -73,7 +77,7 @@ class HomeInteractor: HomeInteractorProtocol {
     
     private func storeMeteorData(_ meteorsAsJson: [[String: Any]]) {
         
-        var meteorsOrderedBySize = [[Int: MeteorData]]()
+        var meteorsOrderedBySize = [MeteorData]()
         
         for meteorData in meteorsAsJson {
             
@@ -89,7 +93,7 @@ class HomeInteractor: HomeInteractorProtocol {
                 meteor.geoLocation = GeoLocation(latitude: coordinates[0], longitude: coordinates[1])
             }
 
-            meteorsOrderedBySize.append([idAsInt : meteor])
+            meteorsOrderedBySize.append(meteor)
             
         }
         
@@ -99,5 +103,7 @@ class HomeInteractor: HomeInteractorProtocol {
     
 }
 extension HomeInteractor {
-
+    func UIDidLoad() {
+        showMeteors()
+    }
 }

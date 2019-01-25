@@ -1,30 +1,50 @@
 import Foundation
-import UIKit.UITableViewController
+import UIKit.UIViewController
 
-class HomeView: UITableViewController, HomeViewProtocol {
+class HomeView: UIViewController, HomeViewProtocol {
+    
+    @IBOutlet var tableView: UITableView!
     
     weak var delegate: HomeViewDelegate!
-    var tableViewData: [Dictionary<String, Any>]?
+    var meteors: [MeteorData]?
     
-    func showMeteorData(_ meteorData: [Dictionary<String, Any>]) {
-        tableViewData = meteorData
+    override func viewDidLoad() {
+        delegate.viewDidLoad()
+    }
+    
+    func showMeteorData(_ meteorData: [MeteorData]) {
+        meteors = meteorData
+        
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 200
+        
+        tableView.reloadData()
     }
     
 }
 extension HomeView {
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return meteors?.count ?? 0
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier:"MeteorTableViewCell", for: indexPath) as! MeteorTableViewCell
 
-        if let cellName = tableViewData?[indexPath.row]["mass"] as? String {
+        if let cellName = meteors?[indexPath.row].mass {
             cell.name.text = cellName
         }
         
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
     }
+
 }

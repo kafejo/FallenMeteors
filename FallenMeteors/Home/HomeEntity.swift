@@ -35,7 +35,7 @@ struct GeoLocation: Codable {
 class HomeEntity: HomeEntityProtocol {
     
     var url: URL!
-    var meteorsOrderedBySize: [[Int: MeteorData]]!
+    var meteorsOrderedBySize: [MeteorData]!
     
     init() {
         //TODO maybe static

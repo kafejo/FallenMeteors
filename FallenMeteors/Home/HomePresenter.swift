@@ -6,10 +6,13 @@ class HomePresenter: HomePresenterProtocol {
     weak var delegate: HomePresenterDelegate!
     var view: HomeViewProtocol!
     
-    func updateMeteorData(_ meteorData: [Dictionary<String, Any>]) {
+    func showMeteorData(_ meteorData: [MeteorData]) {
         view.showMeteorData(meteorData)
     }
+
 }
 extension HomePresenter {
-    
+    func viewDidLoad() {
+        delegate.UIDidLoad()
+    }
 }

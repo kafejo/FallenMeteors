@@ -16,6 +16,7 @@ class HomeRouter: HomeRouterProtocol {
         return view as! UIViewController
     }
     
+    //TODO should this be here
     private func initialLaunchBackendSync() {
         
         //TODO is this the best place to put something like this or no 

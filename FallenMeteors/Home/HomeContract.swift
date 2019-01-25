@@ -17,32 +17,34 @@ protocol HomeInteractorProtocol: HomePresenterDelegate {
     var presenter: HomePresenterProtocol! {get set}
     
     func loadData()
+    func showMeteors()
 }
 
 protocol HomePresenterDelegate: class {
+    func UIDidLoad()
 }
 
 protocol HomePresenterProtocol: HomeViewDelegate {
     var delegate: HomePresenterDelegate! {get set}
     var view: HomeViewProtocol! {get set}
     
-    func updateMeteorData(_ meteorData: [Dictionary<String, Any>])
+    func showMeteorData(_ meteorData: [MeteorData])
 
 }
 
 protocol HomeViewDelegate: class {
-
+    func viewDidLoad()
 }
 
-protocol HomeViewProtocol: class {
+protocol HomeViewProtocol: UITableViewDelegate, UITableViewDataSource {
     var delegate: HomeViewDelegate! {get set}
     
-    func showMeteorData(_ meteorData: [Dictionary<String, Any>])
+    func showMeteorData(_ meteorData: [MeteorData])
 }
 
 protocol HomeEntityProtocol: Codable {
     var url: URL! {get set}
-    var meteorsOrderedBySize: [[Int: MeteorData]]! {get set}
+    var meteorsOrderedBySize: [MeteorData]! {get set}
     
     func archive()
     static func retrieveArchive() -> HomeEntityProtocol
