@@ -27,6 +27,7 @@
 		E304904221F7A26B0092B0AD /* MapEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304903821F7A26B0092B0AD /* MapEntity.swift */; };
 		E304904321F7A26B0092B0AD /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304903A21F7A26B0092B0AD /* MapView.swift */; };
 		E304904421F7A26B0092B0AD /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E304903B21F7A26B0092B0AD /* MapView.storyboard */; };
+		E310BAEF21FC9C5300FEF3AF /* MeteorDataRequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E310BAEE21FC9C5300FEF3AF /* MeteorDataRequestHandler.swift */; };
 		E32160E721FBCE040068D93E /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32160E621FBCE040068D93E /* Timer.swift */; };
 		E326807221F66E2E00FAD3C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326807121F66E2E00FAD3C3 /* AppDelegate.swift */; };
 		E326807721F66E2E00FAD3C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E326807521F66E2E00FAD3C3 /* Main.storyboard */; };
@@ -76,6 +77,7 @@
 		E304903A21F7A26B0092B0AD /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		E304903C21F7A26B0092B0AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MapView.storyboard; sourceTree = "<group>"; };
 		E304904621F7C1160092B0AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E310BAEE21FC9C5300FEF3AF /* MeteorDataRequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorDataRequestHandler.swift; sourceTree = "<group>"; };
 		E32160E621FBCE040068D93E /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		E326806E21F66E2E00FAD3C3 /* FallenMeteors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallenMeteors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E326807121F66E2E00FAD3C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				E32160E621FBCE040068D93E /* Timer.swift */,
+				E310BAEE21FC9C5300FEF3AF /* MeteorDataRequestHandler.swift */,
 			);
 			path = Workers;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				E304904221F7A26B0092B0AD /* MapEntity.swift in Sources */,
 				E304902D21F7A1C20092B0AD /* HomeInteractor.swift in Sources */,
 				E304903121F7A1C20092B0AD /* HomePresenter.swift in Sources */,
+				E310BAEF21FC9C5300FEF3AF /* MeteorDataRequestHandler.swift in Sources */,
 				E304901921F7A1AF0092B0AD /* AppMainViewController.swift in Sources */,
 				E304904321F7A26B0092B0AD /* MapView.swift in Sources */,
 				E304902E21F7A1C20092B0AD /* HomeRouter.swift in Sources */,
