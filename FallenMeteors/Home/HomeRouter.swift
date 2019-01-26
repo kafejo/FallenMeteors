@@ -2,14 +2,20 @@ import Foundation
 import UIKit.UIViewController
 
 class HomeRouter: HomeRouterProtocol {
+    
     var interactor: HomeInteractorProtocol!
+    var view: HomeViewProtocol!
+    
+    var mapRouter: MapRouter?
 
     func assembleModule() -> UIViewController {
         let assembler = HomeAssembler()
         
-        self.interactor = assembler.interactor
+        interactor = assembler.interactor
+        interactor.delegate = self
         
         let view = assembler.view
+        self.view = view
 
         initialLaunchBackendSync()
         

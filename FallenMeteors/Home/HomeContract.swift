@@ -8,7 +8,7 @@ protocol HomeRouterProtocol: HomeInteractorDelegate {
 }
 
 protocol HomeInteractorDelegate: class {
-    
+    func didSelectMeteor(meteor: MeteorData)
 }
 
 protocol HomeInteractorProtocol: HomePresenterDelegate {
@@ -23,6 +23,7 @@ protocol HomeInteractorProtocol: HomePresenterDelegate {
 
 protocol HomePresenterDelegate: class {
     func UIDidLoad()
+    func didSelectMeteor(meteor: MeteorData)
 }
 
 protocol HomePresenterProtocol: HomeViewDelegate {
@@ -35,12 +36,15 @@ protocol HomePresenterProtocol: HomeViewDelegate {
 
 protocol HomeViewDelegate: class {
     func viewDidLoad()
+    func didSelectMeteor(meteor: MeteorData)
 }
 
 protocol HomeViewProtocol: UITableViewDelegate, UITableViewDataSource {
     var delegate: HomeViewDelegate! {get set}
     
     func showMeteorData(_ meteorData: [MeteorData])
+    func presentViewController(_ viewController: UIViewController)
+    func dismissCurrentChildVC()
 }
 
 protocol HomeEntityProtocol: Codable {

@@ -15,4 +15,8 @@ extension HomePresenter {
     func viewDidLoad() {
         delegate.UIDidLoad()
     }
+    
+    func didSelectMeteor(meteor: MeteorData) {
+        delegate.didSelectMeteor(meteor: meteor)
+    }
 }

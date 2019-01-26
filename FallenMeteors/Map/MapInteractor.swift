@@ -6,7 +6,12 @@ class MapInteractor: MapInteractorProtocol {
     var entity: MapEntityProtocol!
     var presenter: MapPresenterProtocol!
     
+    func showMeteor(_ meteor: MeteorData) {
+        presenter.showMeteorOnMap(meteor)
+    }
 }
 extension MapInteractor {
-
+    func didFinishShowingMeteor() {
+        delegate.didFinishShowingMeteor()
+    }
 }

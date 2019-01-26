@@ -26,6 +26,15 @@ class HomeView: UIViewController, HomeViewProtocol {
         meteors = meteorData
     }
     
+    func presentViewController(_ viewController: UIViewController) {
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    func dismissCurrentChildVC() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }
 extension HomeView {
     
@@ -41,23 +50,30 @@ extension HomeView {
         
         let cell = tableView.dequeueReusableCell(withIdentifier:"MeteorTableViewCell", for: indexPath) as! MeteorTableViewCell
 
-        if let cellName = meteors?[indexPath.row].name {
+        let meteor = meteors![indexPath.row]
+        
+        if let cellName = meteor.name {
             cell.name.text = cellName
         }
         
-        if let cellMass = meteors?[indexPath.row].mass {
+        if let cellMass = meteor.mass {
             cell.mass.text = cellMass
         }
         
-        if let fellAtDate = meteors?[indexPath.row].fellAtDate {
+        if let fellAtDate = meteor.fellAtDate {
             cell.fellAtDate.text = fellAtDate
+        }
+        
+        if meteor.geoLocation == nil {
+            cell.locationIcon.image = UIImage(named: "noLocationIcon")
         }
         
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        guard let meteor = meteors?[indexPath.row], meteor.geoLocation != nil else {return}
+        delegate.didSelectMeteor(meteor: meteor)
     }
 
 }

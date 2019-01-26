@@ -85,9 +85,11 @@ class HomeInteractor: HomeInteractorProtocol {
             let dateFell = String(dateAsSubstring ?? "Unknown")
                 
             meteor.fellAtDate = dateFell
-            
-            if let coordinates = meteorData["coordinates"] as? [Double] {
-                meteor.geoLocation = GeoLocation(latitude: coordinates[0], longitude: coordinates[1])
+        
+            if let geolocation = meteorData["geolocation"] as? [String: Any] {
+                if let coordinates = geolocation["coordinates"] as? [Double] {
+                    meteor.geoLocation = GeoLocation(latitude: coordinates[0], longitude: coordinates[1])
+                }
             }
 
             meteorsOrderedBySize.append(meteor)
@@ -110,5 +112,9 @@ class HomeInteractor: HomeInteractorProtocol {
 extension HomeInteractor {
     func UIDidLoad() {
         showMeteors()
+    }
+    
+    func didSelectMeteor(meteor: MeteorData) {
+        delegate.didSelectMeteor(meteor: meteor)
     }
 }

@@ -13,4 +13,5 @@ class MeteorTableViewCell: UITableViewCell {
     @IBOutlet var name: UILabel!
     @IBOutlet var mass: UILabel!
     @IBOutlet var fellAtDate: UILabel!
+    @IBOutlet var locationIcon: UIImageView!
 }
