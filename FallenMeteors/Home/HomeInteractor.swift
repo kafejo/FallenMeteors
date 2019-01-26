@@ -16,6 +16,7 @@ class HomeInteractor: HomeInteractorProtocol {
     func showMeteors() {
         
         guard let meteorsOrderedBySize = entity.meteorsOrderedBySize else {return}
+        
         presenter.showMeteorData(meteorsOrderedBySize)
     }
     

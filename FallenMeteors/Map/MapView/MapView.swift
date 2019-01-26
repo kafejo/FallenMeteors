@@ -6,6 +6,8 @@ class MapView: UIViewController, MapViewProtocol {
     weak var delegate: MapViewDelegate!
     
     @IBOutlet var mapView: MKMapView!
+    @IBOutlet var meteoriteName: UILabel!
+    @IBOutlet var meteoriteDescription: UILabel!
     
     @IBAction func backButton(_ sender: Any) {
         delegate.didFinishShowingMeteor()
