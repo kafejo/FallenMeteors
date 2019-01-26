@@ -4,17 +4,17 @@ struct MeteorData: Codable {
     var name: String?
     var mass: String?
     var geoLocation: GeoLocation?
-    var year: String?
+    var fellAtDate: String?
     
     init() {
         //default init
     }
     
-    init(name: String, mass:String, geoLocation:GeoLocation, year:String) {
+    init(name: String, mass:String, geoLocation:GeoLocation, fellAtDate :String) {
         self.name = name
         self.mass = mass
         self.geoLocation = geoLocation
-        self.year = year
+        self.fellAtDate = fellAtDate
     }
 }
 
@@ -34,14 +34,12 @@ struct GeoLocation: Codable {
 
 class HomeEntity: HomeEntityProtocol {
     
-    var url: URL!
     var lastBackendSync: Date!
     
     var meteorsOrderedBySize: [MeteorData]!
     
     init() {
         //TODO maybe static
-        url = URL(string: "https://data.nasa.gov/resource/y77d-th95.json")
         lastBackendSync = Date()
     }
 
