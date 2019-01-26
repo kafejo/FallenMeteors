@@ -35,11 +35,14 @@ struct GeoLocation: Codable {
 class HomeEntity: HomeEntityProtocol {
     
     var url: URL!
+    var lastBackendSync: Date!
+    
     var meteorsOrderedBySize: [MeteorData]!
     
     init() {
         //TODO maybe static
         url = URL(string: "https://data.nasa.gov/resource/y77d-th95.json")
+        lastBackendSync = Date()
     }
 
     //TODO double check

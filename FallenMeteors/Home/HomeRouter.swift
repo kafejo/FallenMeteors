@@ -18,12 +18,6 @@ class HomeRouter: HomeRouterProtocol {
     
     //TODO should this be here
     private func initialLaunchBackendSync() {
-        
-        //TODO is this the best place to put something like this or no 
-        let firstLaunch = UserDefaults.standard.bool(forKey: "firstLaunch")
-        guard !firstLaunch else {return}
-        UserDefaults.standard.set(true, forKey: "firstLaunch")
-        
-        interactor.loadData()
+        interactor.beginBackendSyncHeartbeat()
     }
 }

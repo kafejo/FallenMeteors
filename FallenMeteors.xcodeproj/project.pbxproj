@@ -27,6 +27,7 @@
 		E304904221F7A26B0092B0AD /* MapEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304903821F7A26B0092B0AD /* MapEntity.swift */; };
 		E304904321F7A26B0092B0AD /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E304903A21F7A26B0092B0AD /* MapView.swift */; };
 		E304904421F7A26B0092B0AD /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E304903B21F7A26B0092B0AD /* MapView.storyboard */; };
+		E32160E721FBCE040068D93E /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32160E621FBCE040068D93E /* Timer.swift */; };
 		E326807221F66E2E00FAD3C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326807121F66E2E00FAD3C3 /* AppDelegate.swift */; };
 		E326807721F66E2E00FAD3C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E326807521F66E2E00FAD3C3 /* Main.storyboard */; };
 		E326807921F66E2F00FAD3C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E326807821F66E2F00FAD3C3 /* Assets.xcassets */; };
@@ -75,6 +76,7 @@
 		E304903A21F7A26B0092B0AD /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		E304903C21F7A26B0092B0AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MapView.storyboard; sourceTree = "<group>"; };
 		E304904621F7C1160092B0AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E32160E621FBCE040068D93E /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		E326806E21F66E2E00FAD3C3 /* FallenMeteors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallenMeteors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E326807121F66E2E00FAD3C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E326807621F66E2E00FAD3C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -177,6 +179,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		E32160E521FBCDB30068D93E /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				E32160E621FBCE040068D93E /* Timer.swift */,
+			);
+			path = Workers;
+			sourceTree = "<group>";
+		};
 		E326806521F66E2E00FAD3C3 = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +210,7 @@
 		E326807021F66E2E00FAD3C3 /* FallenMeteors */ = {
 			isa = PBXGroup;
 			children = (
+				E32160E521FBCDB30068D93E /* Workers */,
 				E304901521F7A1AF0092B0AD /* AppContract.swift */,
 				E304901621F7A1AF0092B0AD /* AppMainViewController.swift */,
 				E304901721F7A1AF0092B0AD /* AppRouter.swift */,
@@ -375,6 +386,7 @@
 				E304904021F7A26B0092B0AD /* MapInteractor.swift in Sources */,
 				E3928BD921F9175A000C516C /* MeteorTableViewCell.swift in Sources */,
 				E304902821F7A1C20092B0AD /* LoadFromStoryboard.swift in Sources */,
+				E32160E721FBCE040068D93E /* Timer.swift in Sources */,
 				E304902F21F7A1C20092B0AD /* HomeAssembler.swift in Sources */,
 				E326807221F66E2E00FAD3C3 /* AppDelegate.swift in Sources */,
 				E304901A21F7A1AF0092B0AD /* AppRouter.swift in Sources */,

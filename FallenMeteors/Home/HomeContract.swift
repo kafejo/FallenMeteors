@@ -16,7 +16,7 @@ protocol HomeInteractorProtocol: HomePresenterDelegate {
     var entity: HomeEntityProtocol! {get set}
     var presenter: HomePresenterProtocol! {get set}
     
-    func loadData()
+    func beginBackendSyncHeartbeat()
     func showMeteors()
 }
 
@@ -44,6 +44,8 @@ protocol HomeViewProtocol: UITableViewDelegate, UITableViewDataSource {
 
 protocol HomeEntityProtocol: Codable {
     var url: URL! {get set}
+    var lastBackendSync: Date! {get set}
+    
     var meteorsOrderedBySize: [MeteorData]! {get set}
     
     func archive()
