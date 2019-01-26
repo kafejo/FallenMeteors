@@ -18,6 +18,13 @@ class HomeRouter: HomeRouterProtocol {
     
     //TODO should this be here
     private func initialLaunchBackendSync() {
+        
         interactor.beginBackendSyncHeartbeat()
+        
+        let firstLaunch = UserDefaults.standard.bool(forKey: "firstLaunch")
+        guard !firstLaunch else {return}
+        UserDefaults.standard.set(true, forKey: "firstLaunch")
+        
+        interactor.loadData()
     }
 }
