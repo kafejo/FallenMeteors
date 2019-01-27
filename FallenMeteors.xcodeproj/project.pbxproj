@@ -36,6 +36,7 @@
 		E326808721F66E2F00FAD3C3 /* FallenMeteorsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326808621F66E2F00FAD3C3 /* FallenMeteorsTests.swift */; };
 		E326809221F66E2F00FAD3C3 /* FallenMeteorsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E326809121F66E2F00FAD3C3 /* FallenMeteorsUITests.swift */; };
 		E3928BD921F9175A000C516C /* MeteorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3928BD821F9175A000C516C /* MeteorTableViewCell.swift */; };
+		E3FF959421FE232F004B2E8C /* MeteorDataFormater.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3FF959321FE232F004B2E8C /* MeteorDataFormater.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		E326809121F66E2F00FAD3C3 /* FallenMeteorsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallenMeteorsUITests.swift; sourceTree = "<group>"; };
 		E326809321F66E2F00FAD3C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E3928BD821F9175A000C516C /* MeteorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorTableViewCell.swift; sourceTree = "<group>"; };
+		E3FF959321FE232F004B2E8C /* MeteorDataFormater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteorDataFormater.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 			children = (
 				E32160E621FBCE040068D93E /* Timer.swift */,
 				E310BAEE21FC9C5300FEF3AF /* MeteorDataRequestHandler.swift */,
+				E3FF959321FE232F004B2E8C /* MeteorDataFormater.swift */,
 			);
 			path = Workers;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 				E304903D21F7A26B0092B0AD /* MapContract.swift in Sources */,
 				E304904221F7A26B0092B0AD /* MapEntity.swift in Sources */,
 				E304902D21F7A1C20092B0AD /* HomeInteractor.swift in Sources */,
+				E3FF959421FE232F004B2E8C /* MeteorDataFormater.swift in Sources */,
 				E304903121F7A1C20092B0AD /* HomePresenter.swift in Sources */,
 				E310BAEF21FC9C5300FEF3AF /* MeteorDataRequestHandler.swift in Sources */,
 				E304901921F7A1AF0092B0AD /* AppMainViewController.swift in Sources */,

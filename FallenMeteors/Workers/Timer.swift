@@ -16,7 +16,7 @@ class Timer {
         let timer = DispatchSource.makeTimerSource()
         strongTimer = timer
         
-        strongTimer.schedule(deadline: .now(), repeating: .seconds(1))
+        strongTimer.schedule(deadline: .now(), repeating: .seconds(10))
         strongTimer.setEventHandler(handler: { [weak self] in
             self?.oneHeartBeat?()
         })

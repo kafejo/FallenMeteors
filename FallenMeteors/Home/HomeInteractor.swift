@@ -9,6 +9,8 @@ class HomeInteractor: HomeInteractorProtocol {
     var timer: Timer!
     var dataRequestHandler: MeteorDataRequestHandler!
     
+    let backendSyncSchedule = 86400.0
+    
     func showMeteors() {
         
         guard let meteorsOrderedByMass = entity.meteorsOrderedByMass, let meteorsWithoutMass = entity.meteorsWithoutMass else {return}
@@ -21,7 +23,7 @@ class HomeInteractor: HomeInteractorProtocol {
         
         timer.oneHeartBeat = { [weak self] in
             guard let lastSync = self?.entity.lastBackendSync else { return }
-            if(NSDate().timeIntervalSince(lastSync) >= 60.0) {
+            if(NSDate().timeIntervalSince(lastSync) >= (self?.backendSyncSchedule)!) {
                 self?.loadData()
             }
         }
@@ -30,73 +32,19 @@ class HomeInteractor: HomeInteractorProtocol {
     func loadData() {
         dataRequestHandler = MeteorDataRequestHandler()
         dataRequestHandler.loadData() { [weak self] (result) in
-            self?.parseJSON(data: result)
+            self?.parseJSONIntoMeteorData(data: result)
         }
     }
 
-    private func parseJSON(data: Data){
+    private func parseJSONIntoMeteorData(data: Data){
 
-        var jsonResult: Any!
-        do {
-            jsonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers)
-        } catch let error {
-            print("Unable to parse Json. Error: \(error.localizedDescription)")
-            return
-        }
-        
-        guard var meteorData = jsonResult as? [[String: Any]] else { print("Unable to parse Json"); return }
-        sortMeteorsByMass(&meteorData)
-        formatAndStoreMeteorData(meteorData)
+        let jsonFormatter = MeteorDataFormatter()
+        guard let meteorData = jsonFormatter.parseAndFormatMeteorData(data: data) else { return }
+        storeMeteorData(meteorsOrderedByMass: meteorData.meteorsOrderedByMass, meteorsWithoutMass: meteorData.meteorsWithoutMass)
         showMeteors()
-        
     }
     
-    private func sortMeteorsByMass(_ meteorData: inout [[String: Any]]) {
-
-        meteorData.sort{
-            //TODO Double check
-            guard let massOne = ($0["mass"] as? String) else { return false }
-            guard let massTwo = ($1["mass"] as? String) else { return true }
-            
-            guard let massOneAsDouble = Double(massOne), let massTwoAsDouble = Double(massTwo) else {return false}
-            
-            return massOneAsDouble > massTwoAsDouble
-        }
-        
-    }
-    
-    private func formatAndStoreMeteorData(_ meteorsAsJson: [[String: Any]]) {
-        
-        var meteorsOrderedByMass = [MeteorData]()
-        var meteorsWithoutMass = [MeteorData]()
-        
-        for meteorData in meteorsAsJson {
-            
-            var meteor = MeteorData()
-            
-            meteor.name = meteorData["name"] as? String
-            meteor.mass = meteorData["mass"] as? String
-            
-            let yearAndTime = meteorData["year"] as? String
-            let dateAsSubstring = yearAndTime?.split(separator: "T").first
-            let dateFell = String(dateAsSubstring ?? "Unknown")
-                
-            meteor.fellAtDate = dateFell
-        
-            if let geolocation = meteorData["geolocation"] as? [String: Any] {
-                if let coordinates = geolocation["coordinates"] as? [Double] {
-                    meteor.geoLocation = GeoLocation(latitude: coordinates[1], longitude: coordinates[0])
-                }
-            }
-
-            if meteor.mass != nil {
-                meteorsOrderedByMass.append(meteor)
-            }
-            else {
-                meteorsWithoutMass.append(meteor)
-            }
-            
-        }
+    private func storeMeteorData(meteorsOrderedByMass: [MeteorData], meteorsWithoutMass: [MeteorData]) {
         
         entity.meteorsOrderedByMass = meteorsOrderedByMass
         entity.meteorsWithoutMass = meteorsWithoutMass
