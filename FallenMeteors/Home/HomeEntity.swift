@@ -44,8 +44,6 @@ class HomeEntity: HomeEntityProtocol {
     }
 
     static let storage = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    
-    //TODO double check
     static let archiveUrl = storage.appendingPathComponent("meteorData")
     
     func archive() {

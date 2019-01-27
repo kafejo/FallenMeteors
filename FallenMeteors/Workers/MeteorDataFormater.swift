@@ -20,7 +20,6 @@ class MeteorDataFormatter {
     func sortMeteorsByMass(_ meteorData: inout [[String: Any]]) {
         
         meteorData.sort{
-            //TODO Double check
             guard let massOne = ($0["mass"] as? String) else { return false }
             guard let massTwo = ($1["mass"] as? String) else { return true }
             

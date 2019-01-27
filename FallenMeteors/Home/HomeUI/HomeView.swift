@@ -11,7 +11,6 @@ class HomeView: UIViewController, HomeViewProtocol {
     weak var delegate: HomeViewDelegate!
     var meteorsOrderedByMass: [MeteorData]? {
         didSet{
-            //TODO look into this threading issue more 
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -20,7 +19,6 @@ class HomeView: UIViewController, HomeViewProtocol {
     
     var meteorsWithoutMass: [MeteorData]? {
         didSet{
-            //TODO look into this threading issue more
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
