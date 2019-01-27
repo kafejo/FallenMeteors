@@ -1,0 +1,44 @@
+Architecture: This app uses an adaption of the VIPER architecture. Each feature is split into an individual module. 
+
+Each module usually consists of:
+
+	•	Contract - Defines the functionality of the module as a whole. Consists of protocols for each component used in the module. 
+
+	•	Router - The same as the standard router in VIPER. Takes care of the wire framing and responsible for presenting new screens/modules.
+
+	•	Assembler - Each router uses an assembler to assemble the modules components. This keeps this functionality nicely separate from the rest of the module.
+
+	•	Interactor - Contains all of the business logic of a module. Is responsible for the making of calls to fetch data.
+
+	•	Entity - Provides a model for which the interactor can use to create objects from its fetched data. All of the fetched data belonging to the module is stored here. 
+
+	•	Presenter - A dumb component. Simply passes on UI updates and interactions to its parent (the interactor) and prepares data sent from the interactor for presentation in the view.
+
+	•	UI - Contains the modules' view which is attached to the storyboard. Also a dumb component it should simply obey commands from the presenter and relay user interaction to its parent (the presenter).
+
+
+The hierarchy of this architecture is slightly different to VIPER, with the router as the topmost parent it is as follows:
+
+Router -> Assembler
+     |
+    \/
+Interactor -> Entity
+     |
+    \/
+presenter 
+     |
+    \/
+View
+
+NOTE: The router also has a direct connection to the view for the purpose of presenting new child VC.
+Each component knows nothing about its parent but has a delegate in order to relay information up the hierarchy. 
+Finally for the architecture, I also try to use common sense when using it. ie if a component is not needed in a module you shouldn’t just add it for consistency as I think it creates clutter. 
+
+Additional worker classes can be found in the group workers. Extensions of functionality can be found in extensions.
+
+I implemented some minor tests for the parsing of the endpoints JSON and sorting the list of Meteors by mass.
+
+App Icons were retrieved from https://icons8.com/
+
+Not for distribution/sharing. 
+
