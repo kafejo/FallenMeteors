@@ -89,7 +89,7 @@ class HomeInteractor: HomeInteractorProtocol {
         
             if let geolocation = meteorData["geolocation"] as? [String: Any] {
                 if let coordinates = geolocation["coordinates"] as? [Double] {
-                    meteor.geoLocation = GeoLocation(latitude: coordinates[0], longitude: coordinates[1])
+                    meteor.geoLocation = GeoLocation(latitude: coordinates[1], longitude: coordinates[0])
                 }
             }
 

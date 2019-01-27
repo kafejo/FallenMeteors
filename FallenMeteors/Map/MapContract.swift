@@ -1,4 +1,5 @@
 import UIKit.UIViewController
+import MapKit
 
 protocol MapRouterProtocol: MapInteractorDelegate {
     var interactor: MapInteractorProtocol! {get set}
@@ -36,7 +37,8 @@ protocol MapViewDelegate: class {
 protocol MapViewProtocol: class {
     var delegate: MapViewDelegate! {get set}
     
-    func showMeteorOnMap(_ meteor: MeteorData)
+    func showMeteorOnMap(_ meteor: MeteorData, meteorMarker: MKPointAnnotation)
+    func panTo(region: MKCoordinateRegion)
 }
 
 protocol MapEntityProtocol: class {
