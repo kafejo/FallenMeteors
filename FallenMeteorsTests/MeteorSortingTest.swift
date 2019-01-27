@@ -12,14 +12,14 @@ import XCTest
 class MeteorSortingTest: XCTestCase {
 
     var meteorDataFormatter: MeteorDataFormatter!
-    var json: [[String: Any]]!
+    var jsonAsDict: [[String: Any]]!
     var unwantedResult: String!
     
     override func setUp() {
         super.setUp()
         
         meteorDataFormatter = MeteorDataFormatter()
-        json = [
+        jsonAsDict = [
             
             [
                 "mass": "1000000",
@@ -49,12 +49,12 @@ class MeteorSortingTest: XCTestCase {
     
     override func tearDown() {
         super.tearDown()
-        json = nil
+        jsonAsDict = nil
     }
     
     func testExample() {
-        meteorDataFormatter.sortMeteorsByMass(&json)
-        let meteorData = meteorDataFormatter.formatMeteorData(json)
+        meteorDataFormatter.sortMeteorsByMass(&jsonAsDict)
+        let meteorData = meteorDataFormatter.formatMeteorData(jsonAsDict)
         
         let meteorsWithMass = meteorData.meteorsWithMass
         for x in 0..<meteorsWithMass.count - 1 {

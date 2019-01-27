@@ -4,15 +4,15 @@ class MeteorDataFormatter {
 
     func parseJSON(data: Data) -> [[String: Any]]?{
         
-        var jsonResult: Any!
+        var json: Any!
         do {
-            jsonResult = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers)
+            json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers)
         } catch let error {
             print("Unable to parse Json. Error: \(error.localizedDescription)")
             return nil
         }
         
-        guard let meteorDataAsJson = jsonResult as? [[String: Any]] else { print("Unable to parse Json"); return nil}
+        guard let meteorDataAsJson = json as? [[String: Any]] else { print("Unable to parse Json"); return nil}
         return meteorDataAsJson
 
     }

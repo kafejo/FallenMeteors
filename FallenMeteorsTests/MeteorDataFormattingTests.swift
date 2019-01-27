@@ -4,14 +4,14 @@ import XCTest
 class FallenMeteorsTests: XCTestCase {
     
     var meteorDataFormatter: MeteorDataFormatter!
-    var json: [[String: Any]]!
+    var jsonAsDict: [[String: Any]]!
     var unwantedResult: String!
     
     override func setUp() {
         super.setUp()
         
         meteorDataFormatter = MeteorDataFormatter()
-        json = [
+        jsonAsDict = [
 
             [
                 "mass": "1000000",
@@ -49,7 +49,7 @@ class FallenMeteorsTests: XCTestCase {
     }
 
     func testExample() {
-        let meteorData = meteorDataFormatter.formatMeteorData(json)
+        let meteorData = meteorDataFormatter.formatMeteorData(jsonAsDict)
         
         for meteor in meteorData.meteorsWithMass {
             XCTAssert(meteor.name != nil)
