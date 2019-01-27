@@ -1,5 +1,3 @@
-//TODO make more genertic
-
 import Foundation
 
 class MeteorDataRequestHandler {
@@ -15,8 +13,7 @@ class MeteorDataRequestHandler {
         URLSession.shared.dataTask(with: request as URLRequest) { (data, response, error ) in
             
             print("Getting Meteor data")
-            
-            //TODO error handling if i have time
+  
             guard error == nil else {
                 print("An error occured while attemping to download meteor data \(error!.localizedDescription)");
                 return

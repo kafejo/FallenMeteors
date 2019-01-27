@@ -7,6 +7,7 @@ class MapInteractor: MapInteractorProtocol {
     var presenter: MapPresenterProtocol!
     
     func showMeteor(_ meteor: MeteorData) {
+        entity.meteorToBeShown = meteor
         presenter.showMeteorOnMap(meteor)
     }
 }

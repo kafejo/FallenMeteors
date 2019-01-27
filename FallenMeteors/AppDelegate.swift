@@ -4,10 +4,11 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    //Note: Keep strong ref to app router so it doesn't get cleaned up
     var appRouter: AppRouter!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
         appRouter = AppRouter(with: window?.rootViewController as! AppMainUserInterfaceProtocol)
         

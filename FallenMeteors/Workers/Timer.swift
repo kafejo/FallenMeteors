@@ -1,5 +1,5 @@
-//WARNING: If functionality to suspend/resume the timer iss ever required,
-//ensure these states are modeled and handled correctly. Failing to do so could result
+//Note: WARNING: If functionality to suspend/resume the timer is ever required,
+//ensure these states are modeled and handled correctly (As enums for example). Failing to do so could result
 //in crashes if you, for example, attempt to resume and already running timer
 import Foundation
 

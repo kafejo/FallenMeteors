@@ -118,12 +118,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E304901B21F7A1C20092B0AD /* FrameworkExtensions */ = {
+		E304901B21F7A1C20092B0AD /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				E304901C21F7A1C20092B0AD /* LoadFromStoryboard.swift */,
 			);
-			path = FrameworkExtensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E304901E21F7A1C20092B0AD /* Home */ = {
@@ -135,19 +135,19 @@
 				E304902321F7A1C20092B0AD /* HomeInteractor.swift */,
 				E304902221F7A1C20092B0AD /* HomeEntity.swift */,
 				E304902721F7A1C20092B0AD /* HomePresenter.swift */,
-				E304901F21F7A1C20092B0AD /* Home */,
+				E304901F21F7A1C20092B0AD /* HomeUI */,
 			);
 			path = Home;
 			sourceTree = "<group>";
 		};
-		E304901F21F7A1C20092B0AD /* Home */ = {
+		E304901F21F7A1C20092B0AD /* HomeUI */ = {
 			isa = PBXGroup;
 			children = (
 				E304902021F7A1C20092B0AD /* HomeView.swift */,
 				E304902121F7A1C20092B0AD /* HomeView.storyboard */,
 				E3928BD821F9175A000C516C /* MeteorTableViewCell.swift */,
 			);
-			path = Home;
+			path = HomeUI;
 			sourceTree = "<group>";
 		};
 		E304903221F7A26B0092B0AD /* Map */ = {
@@ -159,18 +159,18 @@
 				E304903621F7A26B0092B0AD /* MapInteractor.swift */,
 				E304903821F7A26B0092B0AD /* MapEntity.swift */,
 				E304903521F7A26B0092B0AD /* MapPresenter.swift */,
-				E304903921F7A26B0092B0AD /* MapView */,
+				E304903921F7A26B0092B0AD /* MapUI */,
 			);
 			path = Map;
 			sourceTree = "<group>";
 		};
-		E304903921F7A26B0092B0AD /* MapView */ = {
+		E304903921F7A26B0092B0AD /* MapUI */ = {
 			isa = PBXGroup;
 			children = (
 				E304903A21F7A26B0092B0AD /* MapView.swift */,
 				E304903B21F7A26B0092B0AD /* MapView.storyboard */,
 			);
-			path = MapView;
+			path = MapUI;
 			sourceTree = "<group>";
 		};
 		E304904521F7A7340092B0AD /* Resources */ = {
@@ -224,7 +224,7 @@
 				E304903221F7A26B0092B0AD /* Map */,
 				E304904521F7A7340092B0AD /* Resources */,
 				E326807A21F66E2F00FAD3C3 /* LaunchScreen.storyboard */,
-				E304901B21F7A1C20092B0AD /* FrameworkExtensions */,
+				E304901B21F7A1C20092B0AD /* Extensions */,
 			);
 			path = FallenMeteors;
 			sourceTree = "<group>";

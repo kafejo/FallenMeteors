@@ -3,7 +3,6 @@ import UIKit.UIViewController
 
 class AppRouter: AppMainUserInterfaceDelegate {
 
-    //Maybe don't need this stored here as this lets try a UIViewController
     var appMainViewController: AppMainUserInterfaceProtocol!
     var homeRouter: HomeRouterProtocol!
     

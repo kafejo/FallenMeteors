@@ -1,4 +1,3 @@
-import Foundation
 import MapKit
 
 class MapPresenter: MapPresenterProtocol {
@@ -35,7 +34,8 @@ class MapPresenter: MapPresenterProtocol {
         let meteorName: String
         if let name = name {
             meteorName = name
-        } else {
+        }
+        else {
             meteorName = "This unknown meteor"
         }
         
@@ -47,14 +47,16 @@ class MapPresenter: MapPresenterProtocol {
         let mass: String
         if let meteorMass = meteor.mass {
             mass = ("a mass of " + meteorMass)
-        } else {
+        }
+        else {
             mass = "an unknown mass"
         }
         
         let fellAtDate: String
         if let date = meteor.fellAtDate {
             fellAtDate = date
-        } else {
+        }
+        else {
             fellAtDate = "an unknown date"
         }
         

@@ -19,8 +19,6 @@ class MapView: UIViewController, MapViewProtocol {
         mapView.addAnnotation(meteorMarker)
     }
     
-    
-    
     func panTo(region: MKCoordinateRegion) {
         mapView.setRegion(region, animated: false)
     }

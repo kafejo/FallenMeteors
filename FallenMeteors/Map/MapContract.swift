@@ -42,5 +42,5 @@ protocol MapViewProtocol: class {
 }
 
 protocol MapEntityProtocol: class {
-    var meteorToBeShow: MeteorData! {get set}
+    var meteorToBeShown: MeteorData! {get set}
 }

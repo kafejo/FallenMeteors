@@ -1,4 +1,3 @@
-import Foundation
 import UIKit.UIViewController
 
 class HomeView: UIViewController, HomeViewProtocol {
@@ -60,7 +59,8 @@ extension HomeView {
         
         if section == meteorsOrderedByMassSection {
             return meteorsOrderedByMass?.count ?? 0
-        } else {
+        }
+        else {
             return meteorsWithoutMass?.count ?? 0
         }
     }
@@ -73,7 +73,8 @@ extension HomeView {
             let meteor = meteorsOrderedByMass![indexPath.row]
             cell.setup(name: meteor.name, mass: meteor.mass, fellAtDate: meteor.fellAtDate, location: meteor.geoLocation)
             
-        } else {
+        }
+        else {
             let meteor = meteorsWithoutMass![indexPath.row]
             cell.setup(name: meteor.name, mass: meteor.mass, fellAtDate: meteor.fellAtDate, location: meteor.geoLocation)
         }
@@ -88,7 +89,8 @@ extension HomeView {
             guard let meteor = meteorsOrderedByMass?[indexPath.row], meteor.geoLocation != nil
                     else {tableView.deselectRow(at: indexPath, animated: false); return}
             delegate.didSelectMeteor(meteor: meteor)
-        } else if indexPath.section == meteorsWithoutMassSection {
+        }
+        else if indexPath.section == meteorsWithoutMassSection {
             
             guard let meteor = meteorsWithoutMass?[indexPath.row], meteor.geoLocation != nil
                     else {tableView.deselectRow(at: indexPath, animated: false); return}

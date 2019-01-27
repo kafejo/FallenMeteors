@@ -1,4 +1,3 @@
-import Foundation
 import UIKit.UIViewController
 
 class HomeRouter: HomeRouterProtocol {
@@ -26,7 +25,7 @@ class HomeRouter: HomeRouterProtocol {
         
         interactor.beginBackendSyncHeartbeat()
         
-        //always call LoadData on app first launch
+        //Always call LoadData on app first launch
         let firstLaunch = UserDefaults.standard.bool(forKey: "firstLaunch")
         guard !firstLaunch else {return}
         UserDefaults.standard.set(true, forKey: "firstLaunch")

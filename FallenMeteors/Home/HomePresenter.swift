@@ -1,6 +1,3 @@
-import Foundation
-import UIKit
-
 class HomePresenter: HomePresenterProtocol {
     
     weak var delegate: HomePresenterDelegate!

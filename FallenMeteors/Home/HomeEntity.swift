@@ -40,13 +40,13 @@ class HomeEntity: HomeEntityProtocol {
     var meteorsWithoutMass: [MeteorData]?
     
     init() {
-        //TODO maybe static
         lastBackendSync = Date()
     }
 
-    //TODO double check
     static let storage = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let archiveUrl = storage.appendingPathComponent("meteorData.bin")
+    
+    //TODO double check
+    static let archiveUrl = storage.appendingPathComponent("meteorData")
     
     func archive() {
         if let data = try? PropertyListEncoder().encode(self) {

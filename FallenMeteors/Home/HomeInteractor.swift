@@ -9,10 +9,6 @@ class HomeInteractor: HomeInteractorProtocol {
     var timer: Timer!
     var dataRequestHandler: MeteorDataRequestHandler!
     
-    deinit {
-        print("HomeInteractor deinitialized")
-    }
-    
     func showMeteors() {
         
         guard let meteorsOrderedByMass = entity.meteorsOrderedByMass, let meteorsWithoutMass = entity.meteorsWithoutMass else {return}
@@ -23,7 +19,6 @@ class HomeInteractor: HomeInteractorProtocol {
     func beginBackendSyncHeartbeat() {
         timer = Timer()
         
-        //TODO make a constant
         timer.oneHeartBeat = { [weak self] in
             guard let lastSync = self?.entity.lastBackendSync else { return }
             if(NSDate().timeIntervalSince(lastSync) >= 60.0) {
@@ -51,7 +46,7 @@ class HomeInteractor: HomeInteractorProtocol {
         
         guard var meteorData = jsonResult as? [[String: Any]] else { print("Unable to parse Json"); return }
         sortMeteorsByMass(&meteorData)
-        storeMeteorDataInCorrectFormat(meteorData)
+        formatAndStoreMeteorData(meteorData)
         showMeteors()
         
     }
@@ -70,7 +65,7 @@ class HomeInteractor: HomeInteractorProtocol {
         
     }
     
-    private func storeMeteorDataInCorrectFormat(_ meteorsAsJson: [[String: Any]]) {
+    private func formatAndStoreMeteorData(_ meteorsAsJson: [[String: Any]]) {
         
         var meteorsOrderedByMass = [MeteorData]()
         var meteorsWithoutMass = [MeteorData]()
@@ -96,7 +91,8 @@ class HomeInteractor: HomeInteractorProtocol {
 
             if meteor.mass != nil {
                 meteorsOrderedByMass.append(meteor)
-            } else {
+            }
+            else {
                 meteorsWithoutMass.append(meteor)
             }
             
