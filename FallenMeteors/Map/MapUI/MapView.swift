@@ -6,16 +6,16 @@ class MapView: UIViewController, MapViewProtocol {
     weak var delegate: MapViewDelegate!
     
     @IBOutlet var mapView: MKMapView!
-    @IBOutlet var meteoriteName: UILabel!
-    @IBOutlet var meteoriteDescription: UILabel!
+    @IBOutlet var meteoriteNameLabel: UILabel!
+    @IBOutlet var meteoriteDescriptionLabel: UILabel!
     
     @IBAction func backButton(_ sender: Any) {
         delegate.didFinishShowingMeteor()
     }
     
     func showMeteorDetails(meteorName: String, meteorDescription: String, meteorMarker: MKPointAnnotation) {
-        meteoriteName.text = meteorName
-        meteoriteDescription.text = meteorDescription
+        meteoriteNameLabel.text = meteorName
+        meteoriteDescriptionLabel.text = meteorDescription
         mapView.addAnnotation(meteorMarker)
     }
     

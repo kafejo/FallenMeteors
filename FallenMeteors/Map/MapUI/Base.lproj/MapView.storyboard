@@ -118,8 +118,8 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="gOV-Tr-04I" id="c75-f6-nhP"/>
-                        <outlet property="meteoriteDescription" destination="EaJ-Nz-gjL" id="vNa-U5-CyC"/>
-                        <outlet property="meteoriteName" destination="rh8-oo-lwf" id="B9O-7x-UFL"/>
+                        <outlet property="meteoriteDescriptionLabel" destination="EaJ-Nz-gjL" id="eZ4-cq-QWp"/>
+                        <outlet property="meteoriteNameLabel" destination="rh8-oo-lwf" id="cjG-ws-37w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
