@@ -37,7 +37,7 @@ protocol MapViewDelegate: class {
 protocol MapViewProtocol: class {
     var delegate: MapViewDelegate! {get set}
     
-    func showMeteorOnMap(_ meteor: MeteorData, meteorMarker: MKPointAnnotation)
+    func showMeteorDetails(meteorName: String, meteorDescription: String, meteorMarker: MKPointAnnotation) 
     func panTo(region: MKCoordinateRegion)
 }
 

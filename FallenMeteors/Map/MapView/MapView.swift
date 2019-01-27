@@ -13,9 +13,13 @@ class MapView: UIViewController, MapViewProtocol {
         delegate.didFinishShowingMeteor()
     }
     
-    func showMeteorOnMap(_ meteor: MeteorData, meteorMarker: MKPointAnnotation) {
+    func showMeteorDetails(meteorName: String, meteorDescription: String, meteorMarker: MKPointAnnotation) {
+        meteoriteName.text = meteorName
+        meteoriteDescription.text = meteorDescription
         mapView.addAnnotation(meteorMarker)
     }
+    
+    
     
     func panTo(region: MKCoordinateRegion) {
         mapView.setRegion(region, animated: false)
