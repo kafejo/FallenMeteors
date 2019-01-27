@@ -45,7 +45,7 @@ class FallenMeteorsTests: XCTestCase {
 
     override func tearDown() {
         super.tearDown()
-        json = nil
+        jsonAsDict = nil
     }
 
     func testExample() {
