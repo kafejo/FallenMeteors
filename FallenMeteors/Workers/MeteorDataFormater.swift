@@ -1,16 +1,8 @@
 import Foundation
 
 class MeteorDataFormatter {
-    
-    func parseAndFormatMeteorData(data: Data) -> (meteorsOrderedByMass: [MeteorData], meteorsWithoutMass: [MeteorData])? {
-        
-        guard var meteorDataAsJson = parseJSON(data: data) else { return nil }
-        sortMeteorsByMass(&meteorDataAsJson)
-        return formatMeteorData(meteorDataAsJson)
-        
-    }
-    
-    private func parseJSON(data: Data) -> [[String: Any]]?{
+
+    func parseJSON(data: Data) -> [[String: Any]]?{
         
         var jsonResult: Any!
         do {
@@ -25,7 +17,7 @@ class MeteorDataFormatter {
 
     }
     
-    private func sortMeteorsByMass(_ meteorData: inout [[String: Any]]) {
+    func sortMeteorsByMass(_ meteorData: inout [[String: Any]]) {
         
         meteorData.sort{
             //TODO Double check
@@ -39,9 +31,9 @@ class MeteorDataFormatter {
         
     }
     
-    private func formatMeteorData(_ meteorsData: [[String: Any]]) -> (meteorsOrderedByMass: [MeteorData], meteorsWithoutMass: [MeteorData]){
+    func formatMeteorData(_ meteorsData: [[String: Any]]) -> (meteorsWithMass: [MeteorData], meteorsWithoutMass: [MeteorData]){
         
-        var meteorsOrderedByMass = [MeteorData]()
+        var meteorsWithMass = [MeteorData]()
         var meteorsWithoutMass = [MeteorData]()
         
         for meteorData in meteorsData {
@@ -64,7 +56,7 @@ class MeteorDataFormatter {
             }
             
             if meteor.mass != nil {
-                meteorsOrderedByMass.append(meteor)
+                meteorsWithMass.append(meteor)
             }
             else {
                 meteorsWithoutMass.append(meteor)
@@ -72,7 +64,7 @@ class MeteorDataFormatter {
             
         }
         
-        return (meteorsOrderedByMass, meteorsWithoutMass)
+        return (meteorsWithMass, meteorsWithoutMass)
         
     }
     

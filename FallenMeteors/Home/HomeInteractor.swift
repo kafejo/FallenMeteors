@@ -38,9 +38,13 @@ class HomeInteractor: HomeInteractorProtocol {
 
     private func parseJSONIntoMeteorData(data: Data){
 
-        let jsonFormatter = MeteorDataFormatter()
-        guard let meteorData = jsonFormatter.parseAndFormatMeteorData(data: data) else { return }
-        storeMeteorData(meteorsOrderedByMass: meteorData.meteorsOrderedByMass, meteorsWithoutMass: meteorData.meteorsWithoutMass)
+        let meteorFormatter = MeteorDataFormatter()
+        
+        guard var meteorDataAsJson = meteorFormatter.parseJSON(data: data) else { return }
+        meteorFormatter.sortMeteorsByMass(&meteorDataAsJson)
+        let meteorData = meteorFormatter.formatMeteorData(meteorDataAsJson)
+        
+        storeMeteorData(meteorsOrderedByMass: meteorData.meteorsWithMass, meteorsWithoutMass: meteorData.meteorsWithoutMass)
         showMeteors()
     }
     
