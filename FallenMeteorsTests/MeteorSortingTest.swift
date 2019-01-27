@@ -1,11 +1,3 @@
-//
-//  MeteorSortingTest.swift
-//  FallenMeteorsTests
-//
-//  Created by Darragh King on 27/01/2019.
-//  Copyright © 2019 Darragh King. All rights reserved.
-//
-
 import XCTest
 @testable import FallenMeteors
 
