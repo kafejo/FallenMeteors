@@ -22,11 +22,11 @@ class HomeRouter: HomeRouterProtocol {
         return view as! UIViewController
     }
     
-    //TODO should this be here
     private func initialLaunchBackendSync() {
         
         interactor.beginBackendSyncHeartbeat()
         
+        //always call LoadData on app first launch
         let firstLaunch = UserDefaults.standard.bool(forKey: "firstLaunch")
         guard !firstLaunch else {return}
         UserDefaults.standard.set(true, forKey: "firstLaunch")

@@ -5,10 +5,23 @@ class HomeView: UIViewController, HomeViewProtocol {
     
     @IBOutlet var tableView: UITableView!
     
+    let numberOfSection = 2
+    let meteorsOrderedByMassSection = 0
+    let meteorsWithoutMassSection = 1
+    
     weak var delegate: HomeViewDelegate!
-    var meteors: [MeteorData]? {
+    var meteorsOrderedByMass: [MeteorData]? {
         didSet{
             //TODO look into this threading issue more 
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    var meteorsWithoutMass: [MeteorData]? {
+        didSet{
+            //TODO look into this threading issue more
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -22,8 +35,9 @@ class HomeView: UIViewController, HomeViewProtocol {
         tableView.estimatedRowHeight = 200
     }
     
-    func showMeteorData(_ meteorData: [MeteorData]) {
-        meteors = meteorData
+    func showMeteorData(meteorsOrderedByMass: [MeteorData], meteorsWithoutMass: [MeteorData]) {
+        self.meteorsOrderedByMass = meteorsOrderedByMass
+        self.meteorsWithoutMass = meteorsWithoutMass
     }
     
     func presentViewController(_ viewController: UIViewController) {
@@ -38,38 +52,47 @@ class HomeView: UIViewController, HomeViewProtocol {
 }
 extension HomeView {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return numberOfSection
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return meteors?.count ?? 0
+        
+        if section == meteorsOrderedByMassSection {
+            return meteorsOrderedByMass?.count ?? 0
+        } else {
+            return meteorsWithoutMass?.count ?? 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier:"MeteorTableViewCell", for: indexPath) as! MeteorTableViewCell
 
-        let meteor = meteors![indexPath.row]
-        
-        if let cellName = meteor.name {
-            cell.name.text = cellName
-        }
-        
-        if let cellMass = meteor.mass {
-            cell.mass.text = cellMass
-        }
-        
-        if let fellAtDate = meteor.fellAtDate {
-            cell.fellAtDate.text = fellAtDate
-        }
-        
-        if meteor.geoLocation == nil {
-            cell.locationIcon.image = UIImage(named: "noLocationIcon")
+        if indexPath.section == meteorsOrderedByMassSection{
+            let meteor = meteorsOrderedByMass![indexPath.row]
+            cell.setup(name: meteor.name, mass: meteor.mass, fellAtDate: meteor.fellAtDate, location: meteor.geoLocation)
+            
+        } else {
+            let meteor = meteorsWithoutMass![indexPath.row]
+            cell.setup(name: meteor.name, mass: meteor.mass, fellAtDate: meteor.fellAtDate, location: meteor.geoLocation)
         }
         
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let meteor = meteors?[indexPath.row], meteor.geoLocation != nil else {return}
-        delegate.didSelectMeteor(meteor: meteor)
+        
+        if indexPath.section == meteorsOrderedByMassSection {
+            
+            guard let meteor = meteorsOrderedByMass?[indexPath.row], meteor.geoLocation != nil
+                    else {tableView.deselectRow(at: indexPath, animated: false); return}
+            delegate.didSelectMeteor(meteor: meteor)
+        } else if indexPath.section == meteorsWithoutMassSection {
+            
+            guard let meteor = meteorsWithoutMass?[indexPath.row], meteor.geoLocation != nil
+                    else {tableView.deselectRow(at: indexPath, animated: false); return}
+            delegate.didSelectMeteor(meteor: meteor)
+        }
     }
-
 }

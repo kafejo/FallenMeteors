@@ -123,10 +123,10 @@
                                         </tableViewCellContentView>
                                         <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                         <connections>
-                                            <outlet property="fellAtDate" destination="JgS-m7-VOe" id="ipJ-0h-yf0"/>
-                                            <outlet property="locationIcon" destination="Gqt-ev-goE" id="iBC-Po-OFA"/>
-                                            <outlet property="mass" destination="AG0-QN-3V7" id="GvC-LS-5Y6"/>
-                                            <outlet property="name" destination="Adc-qu-KXk" id="fiY-Sd-XzU"/>
+                                            <outlet property="fellAtDateLabel" destination="JgS-m7-VOe" id="udh-rR-4Vs"/>
+                                            <outlet property="locationIcon" destination="Gqt-ev-goE" id="axk-9L-hUp"/>
+                                            <outlet property="massLabel" destination="AG0-QN-3V7" id="tEV-3l-nfz"/>
+                                            <outlet property="nameLabel" destination="Adc-qu-KXk" id="Uq6-Cb-fP7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

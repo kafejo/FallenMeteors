@@ -6,8 +6,8 @@ class HomePresenter: HomePresenterProtocol {
     weak var delegate: HomePresenterDelegate!
     var view: HomeViewProtocol!
     
-    func showMeteorData(_ meteorData: [MeteorData]) {
-        view.showMeteorData(meteorData)
+   func showMeteorData(meteorsOrderedByMass: [MeteorData], meteorsWithoutMass: [MeteorData]) {
+        view.showMeteorData(meteorsOrderedByMass: meteorsOrderedByMass, meteorsWithoutMass: meteorsWithoutMass)
     }
 
 }

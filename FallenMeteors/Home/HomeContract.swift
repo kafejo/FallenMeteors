@@ -30,7 +30,7 @@ protocol HomePresenterProtocol: HomeViewDelegate {
     var delegate: HomePresenterDelegate! {get set}
     var view: HomeViewProtocol! {get set}
     
-    func showMeteorData(_ meteorData: [MeteorData])
+    func showMeteorData(meteorsOrderedByMass: [MeteorData], meteorsWithoutMass: [MeteorData])
 
 }
 
@@ -42,7 +42,7 @@ protocol HomeViewDelegate: class {
 protocol HomeViewProtocol: UITableViewDelegate, UITableViewDataSource {
     var delegate: HomeViewDelegate! {get set}
     
-    func showMeteorData(_ meteorData: [MeteorData])
+    func showMeteorData(meteorsOrderedByMass: [MeteorData], meteorsWithoutMass: [MeteorData])
     func presentViewController(_ viewController: UIViewController)
     func dismissCurrentChildVC()
 }
@@ -50,7 +50,8 @@ protocol HomeViewProtocol: UITableViewDelegate, UITableViewDataSource {
 protocol HomeEntityProtocol: Codable {
     var lastBackendSync: Date! {get set}
     
-    var meteorsOrderedBySize: [MeteorData]! {get set}
+    var meteorsOrderedByMass: [MeteorData]? {get set}
+    var meteorsWithoutMass: [MeteorData]? {get set}
     
     func archive()
     static func retrieveArchive() -> HomeEntityProtocol

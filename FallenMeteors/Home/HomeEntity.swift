@@ -36,7 +36,8 @@ class HomeEntity: HomeEntityProtocol {
     
     var lastBackendSync: Date!
     
-    var meteorsOrderedBySize: [MeteorData]!
+    var meteorsOrderedByMass: [MeteorData]?
+    var meteorsWithoutMass: [MeteorData]?
     
     init() {
         //TODO maybe static

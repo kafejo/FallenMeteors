@@ -15,9 +15,9 @@ class HomeInteractor: HomeInteractorProtocol {
     
     func showMeteors() {
         
-        guard let meteorsOrderedBySize = entity.meteorsOrderedBySize else {return}
+        guard let meteorsOrderedByMass = entity.meteorsOrderedByMass, let meteorsWithoutMass = entity.meteorsWithoutMass else {return}
         
-        presenter.showMeteorData(meteorsOrderedBySize)
+        presenter.showMeteorData(meteorsOrderedByMass: meteorsOrderedByMass, meteorsWithoutMass: meteorsWithoutMass)
     }
     
     func beginBackendSyncHeartbeat() {
@@ -50,13 +50,13 @@ class HomeInteractor: HomeInteractorProtocol {
         }
         
         guard var meteorData = jsonResult as? [[String: Any]] else { print("Unable to parse Json"); return }
-        sortMeteorsBySize(&meteorData)
+        sortMeteorsByMass(&meteorData)
         storeMeteorDataInCorrectFormat(meteorData)
         showMeteors()
         
     }
     
-    private func sortMeteorsBySize(_ meteorData: inout [[String: Any]]) {
+    private func sortMeteorsByMass(_ meteorData: inout [[String: Any]]) {
 
         meteorData.sort{
             //TODO Double check
@@ -72,7 +72,8 @@ class HomeInteractor: HomeInteractorProtocol {
     
     private func storeMeteorDataInCorrectFormat(_ meteorsAsJson: [[String: Any]]) {
         
-        var meteorsOrderedBySize = [MeteorData]()
+        var meteorsOrderedByMass = [MeteorData]()
+        var meteorsWithoutMass = [MeteorData]()
         
         for meteorData in meteorsAsJson {
             
@@ -93,12 +94,16 @@ class HomeInteractor: HomeInteractorProtocol {
                 }
             }
 
-            meteorsOrderedBySize.append(meteor)
+            if meteor.mass != nil {
+                meteorsOrderedByMass.append(meteor)
+            } else {
+                meteorsWithoutMass.append(meteor)
+            }
             
         }
         
-
-        entity.meteorsOrderedBySize = meteorsOrderedBySize
+        entity.meteorsOrderedByMass = meteorsOrderedByMass
+        entity.meteorsWithoutMass = meteorsWithoutMass
         entity.archive()
         
         updateTimeOfLastBackendSync()
