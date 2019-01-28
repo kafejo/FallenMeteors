@@ -27,7 +27,7 @@ class HomeView: UIViewController, HomeViewProtocol {
     
     override func viewDidLoad() {
         delegate.viewDidLoad()
-        
+        // Performance issue - set to automatic even though the rows are static (there's no autoresizing going on, long texts are being truncated)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 200
     }

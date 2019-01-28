@@ -43,6 +43,7 @@ class MeteorDataFormatter {
             meteor.mass = meteorData["mass"] as? String
             
             let yearAndTime = meteorData["year"] as? String
+            // Date formatter should been used instead!
             let dateAsSubstring = yearAndTime?.split(separator: "T").first
             let dateFell = String(dateAsSubstring ?? "Unknown")
             

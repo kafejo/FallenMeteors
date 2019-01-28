@@ -60,6 +60,7 @@ class MapPresenter: MapPresenterProtocol {
             fellAtDate = "an unknown date"
         }
         
+        // Showing raw date from the API instead of using DateFormatter
         return "\(name) has \(mass) and fell on \(fellAtDate)"
     }
     

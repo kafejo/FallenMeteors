@@ -29,6 +29,7 @@ class MeteorTableViewCell: UITableViewCell {
         }
         
         if location == nil {
+            // Why not use image literals?
             locationIcon.image = UIImage(named: "noLocationIcon")
         }
         else {

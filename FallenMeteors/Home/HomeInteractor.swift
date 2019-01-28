@@ -21,6 +21,8 @@ class HomeInteractor: HomeInteractorProtocol {
     func beginBackendSyncHeartbeat() {
         timer = Timer()
         
+        // Why scheduling timer for every 10 seconds when the sync is set to perform for every 86400 seconds?
+        // It's highly ineffective to check such a large dataset every 10 seconds when it possibly changes only once every 24 hours
         timer.oneHeartBeat = { [weak self] in
             guard let lastSync = self?.entity.lastBackendSync else { return }
             if(NSDate().timeIntervalSince(lastSync) >= (self?.backendSyncSchedule)!) {
@@ -40,6 +42,7 @@ class HomeInteractor: HomeInteractorProtocol {
 
         let meteorFormatter = MeteorDataFormatter()
         
+        // Error states are not handled at all
         guard var meteorDataAsJson = meteorFormatter.parseJSON(data: data) else { return }
         meteorFormatter.sortMeteorsByMass(&meteorDataAsJson)
         let meteorData = meteorFormatter.formatMeteorData(meteorDataAsJson)
