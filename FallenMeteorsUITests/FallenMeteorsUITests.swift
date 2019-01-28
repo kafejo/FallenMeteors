@@ -1,11 +1,3 @@
-//
-//  FallenMeteorsUITests.swift
-//  FallenMeteorsUITests
-//
-//  Created by Darragh King on 21/01/2019.
-//  Copyright © 2019 Darragh King. All rights reserved.
-//
-
 import XCTest
 
 class FallenMeteorsUITests: XCTestCase {
